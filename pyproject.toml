@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "evalatar"
+version = "0.1.0"
+authors = [
+    { name = "beidaohanmo", email = "2235725639@qq.com" },
+]
+description = "A Python library for evaluating the performance of digital human video generation models."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "mediapipe",
+    "cd-fvd>=0.1.1",
+    "pyiqa",
+    "pytorch-fid==0.3.0",
+    "opencv-python",
+    "tqdm>=4.67.1",
+    "pillow>=12.0.0",
+    "av",
+    "scipy>=1.15.3",
+    "moviepy==1.0.3",
+    "librosa>=0.11.0",
+    "numpy>=2.2.6",
+    "scenedetect==0.5.1",
+    "insightface>=0.7.3",
+    "onnxruntime-gpu>=1.23.2",
+    "yt-dlp>=2025.10.22",
+    "pytest>=8.4.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/hanmostudy/evalatar"
+Issues = "https://github.com/hanmostudy/evalatar/issues"
+
+[tool.pytest.ini_options]
+markers = [
+    "fid: runs only FID tests",
+    "fvd: runs only FVD tests",
+    "sync: runs only Sync tests",
+    "ase: runs only ASE tests",
+    "csim: runs only CSIM tests",
+    "iqa: runs only IQA tests",
+]
