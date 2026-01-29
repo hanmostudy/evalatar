@@ -144,7 +144,7 @@ def test_fvd_calculation(downloaded_video, static_video):
     print("\n[FVD Test 1/2] Testing for near-zero FVD (video vs. itself)...")
     fvd_zero = calculate_fvd(
         real_video_pattern=downloaded_video,
-        fake_video_pattern=downloaded_video,
+        fake_video_pattern=downloaded_video,  
         device=get_device(), model='videomae'
     )
     print(f"  - Result: {fvd_zero:.4f}")
